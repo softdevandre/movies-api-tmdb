@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Movie API</string>
+    <string name="gladiator">Gladiator</string>
+    <string name="gladiator_year">(2000)</string>
+    <string name="matrix_revolutions">Matrix Revolutions</string>
+    <string name="matrix_revolutions_year">(2001)</string>
+    <string name="v_for_vendetta">V for Vendetta</string>
+    <string name="v_for_vendetta_year">(2005)</string>
+    <string name="interstellar">Interstellar</string>
+    <string name="interstellar_year">(2014)</string>
+</resources>
