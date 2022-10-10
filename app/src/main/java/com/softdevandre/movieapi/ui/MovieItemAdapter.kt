@@ -1,12 +1,15 @@
 package com.softdevandre.movieapi.ui
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.softdevandre.movieapi.DetailActivity
 import com.softdevandre.movieapi.model.Movie
 import com.softdevandre.movieapi.databinding.MovieItemBinding
+import kotlinx.android.synthetic.main.movie_item.view.*
 
 class MovieItemAdapter(private val context: Context, private val dataset: List<Movie>) :
     RecyclerView.Adapter<MovieItemAdapter.MovieViewHolder>() {
@@ -28,12 +31,18 @@ class MovieItemAdapter(private val context: Context, private val dataset: List<M
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.bind(dataset[position])
+        val item = dataset[position]
+        holder.bind(item)
+        holder.itemView.mcvMovie.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.Extras.MOVIE, item)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = dataset.size
 
     companion object {
-        private const val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
+        const val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
     }
 }
