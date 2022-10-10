@@ -45,6 +45,7 @@
         android:elevation="5dp"
         android:textSize="11sp"
         android:textStyle="bold"
+        app:fontFamily="sans-serif-condensed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/mcvCast"
         app:layout_constraintStart_toStartOf="@+id/mcvCast"
