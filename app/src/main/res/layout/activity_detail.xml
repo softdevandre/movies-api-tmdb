@@ -26,7 +26,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvMovieName"
+            android:id="@+id/tvMovieTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
@@ -37,13 +37,13 @@
             tools:text="Movie Name" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvMovieYear"
+            android:id="@+id/tvMovieReleaseDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvMovieName"
-            app:layout_constraintStart_toStartOf="@+id/tvMovieName"
-            app:layout_constraintTop_toBottomOf="@+id/tvMovieName"
+            app:layout_constraintEnd_toEndOf="@+id/tvMovieTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
             tools:ignore="TextContrastCheck"
             tools:text="(Movie Year)" />
 
@@ -54,9 +54,9 @@
             android:layout_marginTop="16dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/tvMovieYear"
-            app:layout_constraintStart_toStartOf="@+id/tvMovieYear"
-            app:layout_constraintTop_toBottomOf="@+id/tvMovieYear"
+            app:layout_constraintEnd_toEndOf="@+id/tvMovieReleaseDate"
+            app:layout_constraintStart_toStartOf="@+id/tvMovieReleaseDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieReleaseDate"
             tools:ignore="TextContrastCheck"
             tools:text="Rating:" />
 
