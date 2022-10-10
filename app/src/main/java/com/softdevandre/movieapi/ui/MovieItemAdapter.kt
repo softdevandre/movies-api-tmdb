@@ -1,10 +1,11 @@
-package com.softdevandre.movieapi
+package com.softdevandre.movieapi.ui
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.softdevandre.movieapi.model.Movie
 import com.softdevandre.movieapi.databinding.MovieItemBinding
 
 class MovieItemAdapter(private val context: Context, private val dataset: List<Movie>) :

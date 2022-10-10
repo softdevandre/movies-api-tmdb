@@ -1,4 +1,4 @@
-package com.softdevandre.movieapi
+package com.softdevandre.movieapi.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

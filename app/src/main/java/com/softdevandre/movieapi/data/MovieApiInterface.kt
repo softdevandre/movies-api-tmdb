@@ -1,5 +1,6 @@
-package com.softdevandre.movieapi
+package com.softdevandre.movieapi.data
 
+import com.softdevandre.movieapi.model.MovieResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

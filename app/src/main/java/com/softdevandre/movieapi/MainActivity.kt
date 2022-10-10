@@ -3,7 +3,12 @@ package com.softdevandre.movieapi
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.softdevandre.movieapi.data.MovieApiInterface
+import com.softdevandre.movieapi.data.MovieApiService
 import com.softdevandre.movieapi.databinding.ActivityMainBinding
+import com.softdevandre.movieapi.model.Movie
+import com.softdevandre.movieapi.model.MovieResponse
+import com.softdevandre.movieapi.ui.MovieItemAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
