@@ -58,10 +58,10 @@
                 android:id="@+id/tvMovieTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_margin="8dp"
                 app:fontFamily="sans-serif-condensed"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +85,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
