@@ -1,20 +1,20 @@
 package com.softdevandre.movieapi.ui
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.softdevandre.movieapi.DetailActivity
+import com.softdevandre.movieapi.MovieListFragmentDirections
 import com.softdevandre.movieapi.databinding.MovieItemBinding
 import com.softdevandre.movieapi.model.Movie
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class MovieItemAdapter(private val context: Context, private val dataset: List<Movie>) :
-    RecyclerView.Adapter<MovieItemAdapter.MovieViewHolder>() {
+class MovieListAdapter(private val context: Context, private val dataset: List<Movie>) :
+    RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
 
     class MovieViewHolder(binding: MovieItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -37,11 +37,8 @@ class MovieItemAdapter(private val context: Context, private val dataset: List<M
         holder.movieTitle.text = item.title
         holder.movieDate.text = item.release
         holder.itemView.mcvMovie.setOnClickListener {
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("title", item.title)
-            intent.putExtra("release", item.release)
-            intent.putExtra("poster", IMAGE_BASE + item.poster)
-            context.startActivity(intent)
+            val action = MovieListFragmentDirections.actionMovieListFragmentToDetailFragment()
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
