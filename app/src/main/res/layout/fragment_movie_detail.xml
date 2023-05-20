@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.softdevandre.movieapi.ui.MovieViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00FFFFFF"
+        tools:context=".ui.MovieDetailFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvMoviePoster"
+                    android:layout_width="200dp"
+                    android:layout_height="320dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMovie"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:movieImageUrl="@{viewModel.movie.poster}"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ImageContrastCheck"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="195dp"
+                    android:layout_height="320dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mcvMoviePoster"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMovieTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.movie.title}"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:fontFamily="sans-serif-condensed"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25"
+                            tools:text="Movie Name" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMovieReleaseDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.movie.release}"
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            app:fontFamily="casual"
+                            app:layout_constraintEnd_toEndOf="@+id/tvMovieTitle"
+                            app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+                            app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+                            tools:ignore="TextContrastCheck"
+                            tools:text="(Movie Year)" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvMovieRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="62dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:fontFamily="sans-serif-condensed"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="TextContrastCheck"
+                            tools:text="Rating:" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivRating"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="@+id/tvMovieRating"
+                            app:layout_constraintStart_toStartOf="@+id/tvMovieRating"
+                            app:layout_constraintTop_toBottomOf="@+id/tvMovieRating"
+                            tools:ignore="ImageContrastCheck"
+                            tools:srcCompat="@drawable/ic_baseline_star_rate_24" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMovieCast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/cast"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="sans-serif-condensed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mcvMoviePoster"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:castListData="@{viewModel.cast}"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvMovieCast"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieCast"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:listitem="@layout/movie_detail_item" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
