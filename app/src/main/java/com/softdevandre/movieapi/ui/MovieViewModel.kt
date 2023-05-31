@@ -58,7 +58,7 @@ class MovieViewModel : ViewModel() {
         }
     }
 
-    fun getMovie(movieId: Int) {
+    private fun getMovieCast(movieId: Int) {
         _status.value = MovieApiStatus.LOADING
         try {
             MovieApi.retrofitService.getMovieCredits(movieId)
@@ -88,6 +88,7 @@ class MovieViewModel : ViewModel() {
 
     fun onMovieClicked(movie: Movie) {
         _movie.value = movie
+        getMovieCast(movie.id)
     }
 }
 

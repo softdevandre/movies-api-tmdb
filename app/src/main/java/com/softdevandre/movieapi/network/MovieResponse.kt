@@ -8,9 +8,9 @@ data class MovieResponse(
 )
 
 data class Movie(
-     val id: Int,
+    val id: Int,
 
-    @SerializedName("title") val title: String?,
+    val title: String?,
 
     @SerializedName("poster_path") val poster: String?,
 

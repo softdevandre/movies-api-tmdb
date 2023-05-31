@@ -19,7 +19,6 @@ class MovieDetailFragment : DialogFragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.rvCast.adapter = MovieDetailAdapter()
-        viewModel.getMovie(arguments?.getInt("movie_id") ?: 0)
 
         return binding.root
     }
