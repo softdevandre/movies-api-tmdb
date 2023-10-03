@@ -30,7 +30,7 @@ Please include a summary of the change and which issue is fixed.
 
 - [ ] Have tested the changes.
 - [ ] Met all the acceptance requirements of this task.
-- [ ] Verified if branch is up-to-date with `develop` (if not - rebase it or merge it).
+- [ ] Verified if branch is up-to-date with `development` (if not - rebase it or merge it).
 - [ ] Resolve git conflicts
 
 ## If any of the acceptance criteria are not met, please explain why below #
